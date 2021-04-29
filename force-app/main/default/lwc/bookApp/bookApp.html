@@ -1,6 +1,14 @@
 <template>
     <lightning-card title="Book Listing App">
         <div class="slds-m-around_medium">
+            <div class="slds-m-around_medium">
+                <lightning-input 
+                    type="search"
+                    onchange={fetchBooksHandler}
+                    label="Search For Books"
+                    value={query}>
+                </lightning-input>
+            </div>
             <lightning-layout multiple-rows>
                 <template if:true={books}>
                     <template for:each={books.items} for:item="book">
